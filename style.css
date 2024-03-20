@@ -1,0 +1,56 @@
+.autobar{
+    color: grey;
+    text-align: center;
+    font-size: .875rem;
+    padding: 0.4rem;
+    background-color: black;
+    border-radius: 0.3rem;
+    margin-top: 0.4rem;
+}
+
+.loader {
+    float: left;
+    display: none;
+    position: relative;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 2rem;
+    background: linear-gradient(#eb31b0, #e4c352, #7df8d6);
+    animation: animate 1s linear infinite;
+  }
+  
+.loader::before {
+    border-radius: 2rem;
+    position: absolute;
+    content: "";
+    background: #000000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    border: 0 solid white;
+  }
+  
+@keyframes animate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+.autoBtn{
+  border-radius: 1rem;
+  color: white;
+  font-size: .875rem;
+  padding: .1rem;
+}
+
+.autoBtn[disabled]{
+  border-radius: 1rem;
+  color: grey;
+  font-size: .875rem;
+  padding: .1rem;
+}

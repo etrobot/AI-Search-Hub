@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "AI Search Hub",
+    "version": "1.0.1",
+    "author": "Frank Lin",
+    "icons": {
+        "128": "AISearchHub.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": ["declarativeNetRequestWithHostAccess", "storage"],
+    "host_permissions": [
+    "*://*/*"
+    ],
+    "minimum_chrome_version": "101",
+    "background": {"service_worker": "bg.js"},
+    "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content.js"]
+        }
+      ],
+      "content_security_policy": {
+        "extension_pages": "script-src 'self'; object-src 'self'; frame-src https://so.360.com https://devv.ai https://metaso.cn https://www.perplexity.ai https://www.phind.com;"
+    }
+}
