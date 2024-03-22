@@ -15,9 +15,15 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
     chrome.storage.local.get(['ai-search-hub'], function(result) {
+        const stored=result['ai-search-hub']
+        if(stored){
+            preSaveSelection=stored
+        }else{
+            preSaveSelection=defaults
+            preSaveSelection.columns = 3;
+        }
 
-        preSaveSelection=result['ai-search-hub'] || defaults
-        preSaveSelection.columns = result['ai-search-hub'].columns || "3";
+        
         function createSearchSite(dropdownId) {
             var searchSiteDiv = document.createElement('div');
             searchSiteDiv.className = "searchsite w-1/3 p-1 bg-gray-100";

@@ -9,7 +9,7 @@
     "action": {
         "default_popup": "popup.html"
     },
-    "permissions": ["declarativeNetRequestWithHostAccess", "storage"],
+    "permissions": ["declarativeNetRequestWithHostAccess", "storage","cookies"],
     "host_permissions": [
     "*://*/*"
     ],
